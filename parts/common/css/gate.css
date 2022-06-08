@@ -1,0 +1,274 @@
+#gate {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+}
+
+#gate .retroButton {
+    user-select: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    margin: 4px;
+    padding: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    border: outset 4px #fff;
+    color: #fff;
+    background-color: #444;
+    background-image: linear-gradient(to top, #8884 50%, transparent 50%);
+    background-size: 2px 2px;
+    box-shadow: 0 0 4px #0008;
+    transition-property: background-color;
+    transition: 0.25s;
+}
+#gate .retroButton:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(transparent, #0008);
+}
+#gate button.retroButton:hover,
+#gate a.retroButton:hover {
+    background-color: #f84;
+    transition-property: background-color;
+    transition: 0.25s;
+}
+
+#gate .acrylicPlate {
+    position: relative;
+    margin: 4px;
+    padding: 4px;
+    font-weight: 700;
+    border-radius: 4px;
+    color: #000;
+    background-color: #ccc;
+    background: radial-gradient(farthest-side circle at left top, #ddc, #baa);
+    box-shadow: 0 0 8px #0008;
+}
+#gate .acrylicPlate.blank {
+    color: #888;
+}
+#gate .acrylicPlate:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 2px;
+    background: linear-gradient(to top, #8884 0%, #8884 50%, #fff6 60%, #fff6 80%, #fff2 90%, #fff2 100%);
+}
+
+#gate > .body {
+    pointer-events: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+#gate > .body > .leftDoor,
+#gate > .body > .rightDoor {
+    pointer-events: fill;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    background:
+        linear-gradient(to top, #2228 0%, #4448 25%, #6668 50%, #8888 75%, #6668 100%),
+        linear-gradient(-30deg, #899 0%, #aab 100%);
+    background-blend-mode: overlay, normal;
+}
+#gate > .body > .leftDoor:before,
+#gate > .body > .rightDoor:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 48px;
+    height: 100%;
+    background:
+        radial-gradient(farthest-side circle at left top, #6668 0%, #8888 25%, #6668 50%, #4448 75%, #2228 100%),
+        linear-gradient(to left, #444 0%, #677 4px, #889 44px, #aaa 100%);
+    background-blend-mode: overlay, normal;
+    box-shadow: 0 0 16px #0008;
+}
+#gate > .body > .leftDoor {
+    left: calc(-50% - 16px);
+    transition-property: left;
+    transition-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+    transition: 0.5s;
+}
+#gate > .body > .leftDoor:before {
+    right: 0;
+}
+#gate.isClose > .body > .leftDoor {
+    left: 0;
+    transition-property: left;
+    transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+    transition: 0.5s;
+}
+#gate > .body > .rightDoor {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    left: calc(100% + 16px);
+    transition-property: left;
+    transition-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+    transition: 0.5s;
+}
+#gate > .body > .rightDoor:before {
+    left: 0;
+}
+#gate.isClose > .body > .rightDoor {
+    left: 50%;
+    transition-property: left;
+    transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+    transition: 0.5s;
+}
+
+#gate > .body > .rightDoor > .copyright {
+    margin: 8px 0 12px 8px;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    text-orientation: sideways;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+}
+
+#gate > .body > .rightDoor > .copyright a {
+    padding: 4px 0;
+    font-weight: 300;
+    color: #fff;
+    background-color: transparent;
+    transition-property: color, background-color;
+    transition: 0.25s;
+}
+#gate > .body > .rightDoor > .copyright a:hover {
+    color: #888;
+    background-color: #fff;
+    transition-property: color, background-color;
+    transition: 0.25s;
+}
+#gate > .body > .rightDoor > .copyright a:active {
+    color: #fff;
+    background-color: #444;
+    transition-property: color, background-color;
+    transition: 0.05s;
+}
+
+#gate > .body > .rightDoor > .buttonList {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 16px);
+    margin: 8px;
+    padding: 4px;
+    padding-bottom: calc(58px + 8px);
+    border: outset 4px #333;
+    background:
+        radial-gradient(farthest-side circle at left top, #6668 0%, #8888 25%, #6668 50%, #4448 75%, #2228 100%),
+        linear-gradient(to top, #888 0%, #aaa 100%);
+    background-blend-mode: overlay, normal;
+    box-shadow: 0 0 4px #0008, inset 0 0 8px #0008;
+}
+#gate > .body > .rightDoor > .buttonList::-webkit-scrollbar {
+    display: none;
+}
+
+#gate > .body > .rightDoor > .buttonList > .item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+#gate > .body > .rightDoor > .buttonList > .item > .label {
+    user-select: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#gate > .button {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+#gate > .button > button {
+    pointer-events: fill;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 16px;
+    right: 16px;
+}
+
+#gate > .button > button > span:nth-of-type(1),
+#gate > .button > button > span:nth-of-type(3) {
+    content: "";
+    position: absolute;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-top: solid 12px transparent;
+    border-bottom: solid 12px transparent;
+    border-left: solid 12px #fff;
+    transition-property: left, right;
+    transition: 0.25s;
+}
+#gate > .button > button > span:nth-of-type(1) {
+    left: calc(8px - 1px);
+    transform: rotate(0deg);
+}
+#gate.isClose > .button > button > span:nth-of-type(1) {
+    left: calc(28px - 1px);
+}
+#gate > .button > button > span:nth-of-type(3) {
+    right: calc(8px - 1px);
+    transform: rotate(180deg);
+}
+#gate.isClose > .button > button > span:nth-of-type(3) {
+    right: calc(28px - 1px);
+}
+#gate > .button > button > span:nth-of-type(2) {
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 24px;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 688px) {
+    #gate > .body > .leftDoor {
+        display: none;
+    }
+    #gate > .body > .rightDoor {
+        width: 100%;
+    }
+    #gate.isClose > .body > .rightDoor {
+        left: 0;
+    }
+}

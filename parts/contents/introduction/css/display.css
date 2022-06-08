@@ -1,0 +1,23 @@
+#body > #introduction > .display.a {
+    position: relative;
+    flex-direction: column;
+    height: auto;
+    background-color: #000;
+}
+#body > #introduction > .display.a:before,
+#body > #introduction > .display.a:after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+}
+#body > #introduction > .display.a:before {
+    top: 0;
+    background: linear-gradient(to top, transparent 0%, #000 100%);
+}
+#body > #introduction > .display.a:after {
+    bottom: 0;
+    background: linear-gradient(to top, #000 0%, transparent 100%);
+}

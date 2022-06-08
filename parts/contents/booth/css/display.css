@@ -1,0 +1,36 @@
+#body > #unreal > .display {
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+    min-height: 100vh;
+}
+
+#body > #unreal > .display > .background {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+}
+#body > #unreal > .display > .background:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+#body > #unreal > .display.a > .background:before {
+    background-image: url('../../../../media/background/unreal_a_fhd.jpg');
+}
+#body > #unreal > .display.b > .background:before {
+    background-image: url('../../../../media/background/unreal_b_fhd.jpg');
+}
+#body > #unreal > .display.c > .background:before {
+    background-image: url('../../../../media/background/unreal_c_fhd.jpg');
+}

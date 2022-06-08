@@ -1,0 +1,45 @@
+#introduction > .display.a > .message {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    min-height: 50vh;
+}
+#introduction > .display.a > .message:first-of-type {
+    margin-top: 25vh;
+}
+#introduction > .display.a > .message:last-of-type {
+    margin-bottom: 25vh;
+}
+
+#introduction > .display.a > .message > div {
+    width: 100%;
+    padding: 16px;
+    color: #0f0;
+    background-color: #0008;
+    box-shadow: 0 0 16px 16px #0008;
+}
+
+#introduction > .display.a > .message > div > .name {
+    margin-bottom: 16px;
+    padding-left: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    border-bottom: solid 1px #0f08;
+    border-left: solid 12px #0f08;
+}
+
+#introduction > .display.a > .message > div > .text > p {
+    margin: 8px 0;
+    padding: 0;
+    text-align: justify;
+}
+#introduction > .display.a > .message > div > .text > p:first-child {
+    margin-top: 0;
+}
+#introduction > .display.a > .message > div > .text > p:last-child {
+    margin-bottom: 0;
+}

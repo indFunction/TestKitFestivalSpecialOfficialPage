@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+#genisys {
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 25vh;
+}
+
+#genisys > .title {
+    font-family: 'Staatliches', monospace;
+    font-weight: 400;
+    font-size: 256px;
+    color: #fff8;
+}
+#genisys > .counter {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 720px;
+    padding: 8px;
+}
+
+#genisys > .counter > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#genisys > .counter > div > .item {
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-family: 'Staatliches', monospace;
+    font-weight: 400;
+    font-size: 28px;
+    color: #4ac;
+}
+#genisys > .counter > div > .flip {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 128px;
+    height: 128px;
+    font-family: 'Anton', monospace;
+    font-weight: 400;
+    font-size: 120px;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #4ac;
+    transition-property: width;
+    transition: 0.5s;
+}
+#genisys > .counter > div > .flip.digit3 {
+    width: 192px;
+}
+#genisys > .counter > div > .flip.digit4 {
+    width: 256px;
+}
+
+#genisys > .counter > div > .flip > div {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #4ac;
+}
+#genisys > .counter > div > .flip > .top {
+    top: 0;
+    height: calc(50% - 1px);
+}
+#genisys > .counter > div > .flip > .bottom {
+    top: calc(50% + 1px);
+    height: calc(50% - 1px);
+}
+#genisys > .counter > div > .flip > .after.bottom {
+    opacity: 0;
+}
+#genisys > .counter > div > .flip > .before.bottom.move {
+    animation-name: flip-before-bottom;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+#genisys > .counter > div > .flip > .before.top.move {
+    transform-origin: bottom;
+    animation-name: flip-before-top;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+#genisys > .counter > div > .flip > .after.bottom.move {
+    transform-origin: top;
+    animation-name: flip-after-bottom;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#genisys > .counter > div > .flip > div > span {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    transform: perspective(256px) rotateX(0deg);
+}
+#genisys > .counter > div > .flip > .top > span {
+    top: 50%;
+}
+#genisys > .counter > div > .flip > .bottom > span {
+    top: calc(-50% - 1px);
+}
+#genisys > .counter > div > .flip > div > span:nth-of-type(1) {
+    left: 0;
+}
+#genisys > .counter > div > .flip > div > span:nth-of-type(2) {
+    left: 50%;
+}
+#genisys > .counter > div > .flip.digit3 > div > span {
+    width: 33.3333%;
+}
+#genisys > .counter > div > .flip.digit3 > div > span:nth-of-type(1) {
+    left: 0;
+}
+#genisys > .counter > div > .flip.digit3 > div > span:nth-of-type(2) {
+    left: 33.3333%;
+}
+#genisys > .counter > div > .flip.digit3 > div > span:nth-of-type(3) {
+    left: 66.6666%;
+}
+#genisys > .counter > div > .flip.digit4 > div > span {
+    width: 25%;
+}
+#genisys > .counter > div > .flip.digit4 > div > span:nth-of-type(1) {
+    left: 0;
+}
+#genisys > .counter > div > .flip.digit4 > div > span:nth-of-type(2) {
+    left: 25%;
+}
+#genisys > .counter > div > .flip.digit4 > div > span:nth-of-type(3) {
+    left: 50%;
+}
+#genisys > .counter > div > .flip.digit4 > div > span:nth-of-type(4) {
+    left: 75%;
+}
+
+@keyframes flip-before-bottom {
+    0% {
+        background-color: #4ac;
+    }
+    50% {
+        background-color: #4ac;
+    }
+    50.01% {
+        background-color: #4ac;
+    }
+    100% {
+        background-color: #068;
+    }
+}
+
+@keyframes flip-before-top {
+    0% {
+        background-color: #4ac;
+        transform: perspective(256px) rotateX(0deg);
+        opacity: 1;
+    }
+    50% {
+        background-color: #068;
+        transform: perspective(256px) rotateX(-90deg);
+        opacity: 1;
+    }
+    50.01% {
+        background-color: #068;
+        transform: perspective(256px) rotateX(-90deg);
+        opacity: 0;
+    }
+    100% {
+        background-color: #068;
+        transform: perspective(256px) rotateX(-180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes flip-after-bottom {
+    0% {
+        background-color: #6ce;
+        transform: perspective(256px) rotateX(0deg);
+        opacity: 0;
+    }
+    50% {
+        background-color: #6ce;
+        transform: perspective(256px) rotateX(90deg);
+        opacity: 0;
+    }
+    50.01% {
+        background-color: #6ce;
+        transform: perspective(256px) rotateX(90deg);
+        opacity: 1;
+    }
+    100% {
+        background-color: #4ac;
+        transform: perspective(256px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 719px) {
+    #genisys > .title {
+        font-size: 128px;
+    }
+    #genisys > .counter {
+        max-width: 360px;
+        padding: 0 4px;
+    }
+
+    #genisys > .counter > div > .item {
+        font-size: 14px;
+    }
+    #genisys > .counter > div > .flip {
+        width: 64px;
+        height: 64px;
+        font-size: 60px;
+    }
+    #genisys > .counter > div > .flip.digit3 {
+        width: 96px;
+    }
+    #genisys > .counter > div > .flip.digit4 {
+        width: 128px;
+    }
+}

@@ -1,0 +1,313 @@
+#H4CKneyed > .display > .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(960px - 16px);
+    height: 64px;
+    margin: 4px;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 4px;
+    color: #000c;
+    background-color: #f88;
+    box-shadow: 0 0 8px #0008;
+    transition-property: background-color;
+    transition: 0.25s;
+}
+#H4CKneyed > .display > .head:hover {
+    background-color: #d66;
+    transition-property: background-color;
+    transition: 0.25s;
+}
+#H4CKneyed > .display > .head:active {
+    background-color: #b44;
+    transition-property: background-color;
+    transition: 0.05s;
+}
+
+#H4CKneyed > .display > .head > .arrow {
+    content: "";
+    width: 0;
+    height: 0;
+    margin: 0 8px;
+    vertical-align: middle;
+    border-top: solid 6px transparent;
+    border-bottom: solid 6px transparent;
+    border-left: solid 6px var(--use);
+    transform: rotate(0deg);
+    transition-property: transform;
+    transition: 0.25s;
+}
+#H4CKneyed > .display > .head:hover > .arrow {
+    transform: rotate(-90deg);
+    transition-property: transform;
+    transition: 0.25s;
+}
+#H4CKneyed > .display > .head.isHide:hover > .arrow {
+    transform: rotate(90deg);
+    transition-property: transform;
+    transition: 0.25s;
+}
+
+#H4CKneyed > .display > .content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: calc(960px - 8px);
+}
+
+#H4CKneyed > .display > .content > .blocks {
+    z-index: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(320px - 8px);
+    margin: 68px 4px 4px 4px;
+    padding: 4px;
+    border-end-start-radius: 4px;
+    border-end-end-radius: 4px;
+    background-color: #888;
+    box-shadow: 0 0 8px #0008;
+}
+#H4CKneyed > .display > .content > .blocks:before {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    top: -64px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 64px);
+    border-radius: 4px;
+    background: radial-gradient(farthest-side circle at left top, #9998, #7778);
+    box-shadow: 0 0 8px #0008;
+}
+
+#H4CKneyed > .display > .content > .blocks > .category {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -64px;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000c;
+}
+#H4CKneyed > .display > .content > .blocks > .category:before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    border-start-start-radius: 4px;
+    border-start-end-radius: 4px;
+}
+#H4CKneyed > .display > .content > .blocks:nth-of-type(1) > .category:before {
+    background-color: #8cf;
+}
+#H4CKneyed > .display > .content > .blocks:nth-of-type(2) > .category:before {
+    background-color: #c8f;
+}
+#H4CKneyed > .display > .content > .blocks:nth-of-type(3) > .category:before {
+    background-color: #f8c;
+}
+#H4CKneyed > .display > .content > .blocks > .block {
+    z-index: 0;
+    position: relative;
+    width: 100%;
+    height: 360px;
+    padding: 4px;
+    transition-property: height;
+    transition: 0.5s;
+}
+#H4CKneyed > .display > .content > .blocks > .block:before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 24px 24px 0;
+    border-color: transparent #866 transparent transparent;
+}
+#H4CKneyed > .display > .content > .blocks > .block:after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 24px 0 0 24px;
+    border-color: transparent transparent transparent #866;
+}
+#H4CKneyed > .display > .content.isHide > .blocks > .block {
+    height: 180px;
+    transition-property: height;
+    transition: 0.5s;
+}
+
+#H4CKneyed > .display > .content > .blocks > .block > div {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    border-start-start-radius: 32px;
+    color: #fff;
+    background: radial-gradient(farthest-side circle at left top, #444, #222);
+    box-shadow: 0 0 4px #0008;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 8px;
+    width: 8px;
+    height: 100%;
+    box-shadow: 0 0 4px #000;
+}
+#H4CKneyed > .display > .content > .blocks:nth-of-type(1) > .block > div:before {
+    background: linear-gradient(to top, #048 0%, #468 100%);
+}
+#H4CKneyed > .display > .content > .blocks:nth-of-type(2) > .block > div:before {
+    background: linear-gradient(to top, #408 0%, #648 100%);
+}
+#H4CKneyed > .display > .content > .blocks:nth-of-type(3) > .block > div:before {
+    background: linear-gradient(to top, #804 0%, #846 100%);
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 75%;
+    height: 80px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #422;
+    background:
+        radial-gradient(farthest-side circle at left top, #7668 0%, #9888 25%, #7668 50%, #5448 75%, #3228 100%),
+        #ccc;
+    background-blend-mode: overlay, normal;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    width: 75%;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .organizer {
+    flex-shrink: 0;
+    width: 75%;
+    padding-bottom: 4px;
+    text-align: right;
+    font-size: 12px;
+    border-bottom: solid 1px #fff;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .description {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    max-height: 208px;
+    margin: 4px 0;
+    opacity: 1;
+    transition-property: opacity;
+    transition: 0.5s;
+}
+#H4CKneyed > .display > .content.isHide > .blocks > .block > div > .description {
+    user-select: none;
+    opacity: 0;
+    transition-property: opacity;
+    transition: 0.5s;
+}
+
+#H4CKneyed > .display > .content > .blocks > .block > div > .data > .id {
+    padding: 0 4px;
+    border: solid 1px #fff8;
+    color: #fff8;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .data > .date {
+    margin-right: 4px;
+    color: #fffc;
+}
+
+#H4CKneyed > .display > .content > .blocks > .block > div > .description > .text {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    font-size: 14px;
+    opacity: 1;
+    transition-property: opacity;
+    transition: 0.5s;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .description > .image + .text {
+    opacity: 0;
+    transition-property: opacity;
+    transition: 0.5s;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .description > .image {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition-property: opacity;
+    transition: 0.5s;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .description > .image:hover {
+    opacity: 0;
+    transition-property: opacity;
+    transition: 0.5s;
+}
+#H4CKneyed > .display > .content > .blocks > .block > div > .description > .image:hover + .text {
+    opacity: 1;
+    transition-property: opacity;
+    transition: 0.5s;
+}
+
+#H4CKneyed > .display > .content > .blocks > .block > div > .description > .image > img,
+#H4CKneyed > .display > .content > .blocks > .block > div > .description > .image > a {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#H4CKneyed > .display > .content > .blocks > .blank {
+    width: 100%;
+    height: 180px;
+    transition-property: height;
+    transition: 0.5s;
+}
+#H4CKneyed > .display > .content.isHide > .blocks > .blank {
+    width: 100%;
+    height: 90px;
+    transition-property: height;
+    transition: 0.5s;
+}

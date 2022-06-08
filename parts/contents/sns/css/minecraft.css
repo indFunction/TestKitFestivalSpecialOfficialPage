@@ -1,0 +1,427 @@
+:root {
+    --minecraftGrass: #7b6;
+    --minecraftDirt: #987;
+    --minecraftObsidian: #324;
+}
+
+#minecraft {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#minecraft .daylightCycle {
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-duration: 1200s;
+}
+
+#minecraft > div {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#minecraft > .background > .sky {
+    width: 100%;
+    height: 70%;
+    background-color: #9ce;
+    animation-name: sky-color;
+}
+
+#minecraft > .background > .sky > .fog {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, #fff8 0%, transparent 100%);
+    animation-name: day-alpha;
+}
+#minecraft > .background > .sky > .twilight {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #d53 0%, transparent 100%);
+    animation-name: twilight-move;
+}
+#minecraft > .background > .sky > .sun {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: calc(20% - 16px);
+    width: 64px;
+    height: 64px;
+    background-color: #fff;
+    box-shadow: 0 0 64px #fff;
+    animation-name: sun-move;
+}
+#minecraft > .background > .sky > .moon {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: calc(80% - 16px);
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    background-color: #fff;
+    box-shadow: 0 0 32px #fff;
+    animation-name: moon-move;
+}
+
+#minecraft > .background > .ground {
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, var(--minecraftDirt) 0%, var(--minecraftDirt) calc(100% - 16px), var(--minecraftGrass) calc(100% - 16px), var(--minecraftGrass) 100%);
+}
+
+#minecraft > .background > .ground > .grass {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-size: 64px 64px;
+}
+#minecraft > .background > .ground > .grass:nth-of-type(1) {
+    background-image: linear-gradient(
+        to right,
+        var(--minecraftGrass) 0%,
+        var(--minecraftGrass) 100%
+    );
+}
+#minecraft > .background > .ground > .grass:nth-of-type(2) {
+    background-image: linear-gradient(
+        to right,
+        var(--minecraftGrass) 0%,
+        var(--minecraftGrass) 31.25%,
+        var(--minecraftDirt) 31.25%,
+        var(--minecraftDirt) 37.5%,
+        var(--minecraftGrass) 37.5%,
+        var(--minecraftGrass) 100%
+    );
+}
+#minecraft > .background > .ground > .grass:nth-of-type(3) {
+    background-image: linear-gradient(
+        to right,
+        var(--minecraftGrass) 0%,
+        var(--minecraftGrass) 6.25%,
+        var(--minecraftDirt) 6.25%,
+        var(--minecraftDirt) 12.5%,
+        var(--minecraftGrass) 12.5%,
+        var(--minecraftGrass) 31.25%,
+        var(--minecraftDirt) 31.25%,
+        var(--minecraftDirt) 37.5%,
+        var(--minecraftGrass) 37.5%,
+        var(--minecraftGrass) 43.75%,
+        var(--minecraftDirt) 43.75%,
+        var(--minecraftDirt) 50%,
+        var(--minecraftGrass) 50%,
+        var(--minecraftGrass) 75%,
+        var(--minecraftDirt) 75%,
+        var(--minecraftDirt) 81.25%,
+        var(--minecraftGrass) 81.25%,
+        var(--minecraftGrass) 93.75%,
+        var(--minecraftDirt) 93.75%,
+        var(--minecraftDirt) 100%
+    );
+}
+#minecraft > .background > .ground > .grass:nth-of-type(4) {
+    background-image: linear-gradient(
+        to right,
+        var(--minecraftDirt) 0%,
+        var(--minecraftDirt) 25%,
+        var(--minecraftGrass) 25%,
+        var(--minecraftGrass) 31.25%,
+        var(--minecraftDirt) 31.25%,
+        var(--minecraftDirt) 50%,
+        var(--minecraftGrass) 50%,
+        var(--minecraftGrass) 56.25%,
+        var(--minecraftDirt) 56.25%,
+        var(--minecraftDirt) 62.5%,
+        var(--minecraftGrass) 62.5%,
+        var(--minecraftGrass) 68.75%,
+        var(--minecraftDirt) 68.75%,
+        var(--minecraftDirt) 100%
+    );
+}
+
+#minecraft > .objects > .gates {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(70% - 240px);
+    left: calc(50% - 360px);
+    width: 720px;
+    height: 240px;
+}
+
+#minecraft > .objects > .gates > .gate {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 192px;
+    height: 240px;
+    margin: 0 24px;
+    background:
+        linear-gradient(to top, var(--minecraftObsidian) 0%, var(--minecraftObsidian) 20%, transparent 20%, transparent 80%, var(--minecraftObsidian) 80%, var(--minecraftObsidian) 100%),
+        linear-gradient(to left, var(--minecraftObsidian) 0%, var(--minecraftObsidian) 25%, transparent 25%, transparent 75%, var(--minecraftObsidian) 75%, var(--minecraftObsidian) 100%);
+}
+
+#minecraft > .objects > .gates > .gate > .portal {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    height: 60%;
+    font-size: 32px;
+    color: #fff;
+    background-color: transparent;
+    transition-property: color, background-color;
+    transition: 0.5s;
+}
+#minecraft > .objects > .gates > .gate > .portal:before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #84dc;
+    box-shadow: 0 0 24px #84d8;
+    transition-property: background-color, box-shadow;
+    transition: 0.5s;
+}
+#minecraft > .objects > .gates > .gate > .portal:hover {
+    color: #000;
+    background-color: #fff;
+    transition-property: color, background-color;
+    transition: 0.5s;
+}
+#minecraft > .objects > .gates > .gate > .portal:hover:before {
+    transition-property: background-color, box-shadow;
+    transition: 0.5s;
+}
+#minecraft > .objects > .gates > .gate > .portal.twitter:before {
+    background-color: #00aceec0;
+    box-shadow: 0 0 24px #00acee80;
+}
+#minecraft > .objects > .gates > .gate > .portal.twitter:hover:before {
+    background-color: #00acee80;
+    box-shadow: 0 0 48px #00acee80;
+}
+#minecraft > .objects > .gates > .gate > .portal.facebook:before {
+    background-color: #3b5998c0;
+    box-shadow: 0 0 24px #3b599880;
+}
+#minecraft > .objects > .gates > .gate > .portal.facebook:hover:before {
+    background-color: #3b599880;
+    box-shadow: 0 0 48px #3b599880;
+}
+#minecraft > .objects > .gates > .gate > .portal.youtube:before {
+    background-color: #c4302bc0;
+    box-shadow: 0 0 24px #c4302b80;
+}
+#minecraft > .objects > .gates > .gate > .portal.youtube:hover:before {
+    background-color: #c4302b80;
+    box-shadow: 0 0 48px #c4302b80;
+}
+
+#minecraft > .over {
+    pointer-events: none;
+    animation-name: night-alpha;
+}
+
+@keyframes sky-color {
+    0% {
+        background-color: #101;
+    }
+    20.8333% {
+        background-color: #101;
+    }
+    25% {
+        background-color: #545;
+    }
+    29.1667% {
+        background-color: #9ce;
+    }
+    70.8333% {
+        background-color: #9ce;
+    }
+    75% {
+        background-color: #545;
+    }
+    79.1667% {
+        background-color: #101;
+    }
+    100% {
+        background-color: #101;
+    }
+}
+
+@keyframes sun-move {
+    0% {
+        top: 85%;
+    }
+    20.8333% {
+        top: 85%;
+    }
+    29.1667% {
+        top: 25%;
+    }
+    66.6667% {
+        top: 25%;
+    }
+    75% {
+        top: 85%;
+    }
+    100% {
+        top: 85%;
+    }
+}
+
+@keyframes moon-move {
+    0% {
+        top: 25%;
+    }
+    16.6667% {
+        top: 25%;
+    }
+    25% {
+        top: 85%;
+    }
+    70.8333% {
+        top: 85%;
+    }
+    79.1667% {
+        top: 25%;
+    }
+    100% {
+        top: 25%;
+    }
+}
+
+@keyframes day-alpha {
+    0% {
+        opacity: 0;
+    }
+    20.8333% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    29.1667% {
+        opacity: 1;
+    }
+    70.8333% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    79.1667% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes twilight-move {
+    0% {
+        top: 70%;
+        opacity: 0;
+    }
+    16.6667% {
+        top: 70%;
+        opacity: 0;
+    }
+    25% {
+        top: 0%;
+        opacity: 1;
+    }
+    33.3333% {
+        top: 70%;
+        opacity: 0;
+    }
+    66.6667% {
+        top: 70%;
+        opacity: 0;
+    }
+    75% {
+        top: 0%;
+        opacity: 1;
+    }
+    83.3333% {
+        top: 70%;
+        opacity: 0;
+    }
+    100% {
+        top: 70%;
+        opacity: 0;
+    }
+}
+
+@keyframes night-alpha {
+    0% {
+        background-color: #0008;
+    }
+    20.8333% {
+        background-color: #0008;
+    }
+    25% {
+        background-color: #f882;
+    }
+    29.1667% {
+        background-color: #0000;
+    }
+    70.8333% {
+        background-color: #0000;
+    }
+    75% {
+        background-color: #f882;
+    }
+    79.1667% {
+        background-color: #0008;
+    }
+    100% {
+        background-color: #0008;
+    }
+}
+
+@media screen and (max-width: 719px) {
+    #minecraft > .objects > .gates {
+        top: calc(70% - 120px);
+        left: calc(50% - 180px);
+        width: 360px;
+        height: 120px;
+    }
+
+    #minecraft > .objects > .gates > .gate {
+        width: 96px;
+        height: 120px;
+        margin: 0 12px;
+    }
+
+    #minecraft > .objects > .gates > .gate > .portal {
+        font-size: 16px;
+    }
+}
