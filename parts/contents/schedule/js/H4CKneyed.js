@@ -8,11 +8,11 @@ const timeLength = [
     [
         {
             start: [17, 0],
-            end: [20, 0]
+            end: [19, 0]
         },
         {
             start: [17, 0],
-            end: [20, 0]
+            end: [19, 0]
         },
         {
             start: [0, 0],
