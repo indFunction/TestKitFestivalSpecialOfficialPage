@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
 #H4CKneyed > .display > .head {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +50,16 @@
     transform: rotate(90deg);
     transition-property: transform;
     transition: 0.25s;
+}
+#H4CKneyed > .display > .head > .day {
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+    margin: 0 8px;
+    font-family: 'Staatliches', monospace;
+    font-weight: 400;
+    font-size: 48px;
+    color: #fff8;
 }
 
 #H4CKneyed > .display > .content {
