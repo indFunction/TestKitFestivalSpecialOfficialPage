@@ -9,8 +9,7 @@ const screenElements = [
     'access',
     'parking',
     'sns',
-    'idc',
-    'information'
+    'idc'
 ];
 
 const menuData = [
@@ -57,11 +56,6 @@ const menuData = [
     {
         name: '感染症対策について',
         id: 'idc',
-        link: ''
-    },
-    {
-        name: 'お問い合わせ',
-        id: 'information',
         link: ''
     }
 ];
