@@ -56,7 +56,7 @@ const menuData = [
     {
         name: '感染症対策について',
         id: 'idc',
-        link: ''
+        link: '/pages/idc.html'
     }
 ];
 
