@@ -24,7 +24,7 @@ let scrollDiff;
 function generateRandomString(charset, length) {
     let res = '';
 
-    for (let i = 0; i < length; i++) res += charset.substr(Math.random() * (charset.length - 1), 1);
+    for (let i = 0; i < length; i++) res += charset.substr(Math.random() * charset.length, 1);
 
     return res;
 }
