@@ -41,12 +41,12 @@ const menuData = [
     {
         name: 'アクセス',
         id: 'access',
-        link: ''
+        link: '/pages/access.html'
     },
     {
         name: '駐車場混雑状況',
         id: 'parking',
-        link: ''
+        link: '/pages/parking.html'
     },
     {
         name: '各種SNSリンク',
