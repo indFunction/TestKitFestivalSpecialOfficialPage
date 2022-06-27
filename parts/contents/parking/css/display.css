@@ -1,11 +1,37 @@
 #body > #parking > .display {
     position: relative;
-    align-items: flex-start;
-    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
     min-height: 100vh;
-    background-color: #888;
+}
+
+#body > #parking > .display.a > .background {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+}
+#body > #parking > .display.a > .background:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
     background-image: url('../../../../media/background/delorean_fhd.jpg');
     background-position: 50% 50%;
     background-size: cover;
-    background-attachment: fixed;
+}
+#body > #parking > .display.a > .background:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.75;
 }
