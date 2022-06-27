@@ -24,3 +24,12 @@
 #title > h1 > span {
     white-space: nowrap;
 }
+
+@media screen and (max-width: 719px) {
+    #title > h1.ja {
+        font-size: 32px;
+    }
+    #title > h1.en {
+        font-size: 16px;
+    }
+}
