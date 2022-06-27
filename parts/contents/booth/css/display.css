@@ -34,3 +34,13 @@
 #body > #unreal > .display.c > .background:before {
     background-image: url('../../../../media/background/unreal_c_fhd.jpg');
 }
+#body > #unreal > .display > .background:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.5;
+}
