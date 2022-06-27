@@ -84,22 +84,22 @@ gateElement.innerHTML = `
 
 const gateButtonListElement = gateElement.getElementsByClassName('buttonList')[0];
 
-menuData.map((item, index) => (
+menuData.map((item, index) => {
+    const linkElement = item.link ? 'a' : 'div';
+    const linkHref = isRoot ?
+        '.' + item.link :
+        item.link == '/index.html' ? '..' + item.link : item.link.replace('/pages', '.');
+
     gateButtonListElement.insertAdjacentHTML(
         'beforeend',
         `
             <div class="item">
-                <div class="label acrylicPlate${item.link ? '': ' blank'}">${item.name}</div>
-                <${item.link ? 'a' : 'div'} class="retroButton"${item.link ? `
-                    href="${isRoot ?
-                        '.' + item.link :
-                        item.link == '/index.html' ? '..' + item.link : item.link.replace('/pages', '.')
-                    }"
-                ` : ''}>${menuData.length - index}</${item.link ? 'a' : 'div'}>
+                <${linkElement} class="label acrylicPlate${item.link ? '': ' blank'}"${item.link ? ` href="${linkHref}"` : ''}>${item.name}</${linkElement}>
+                <${linkElement} class="retroButton"${item.link ? ` href="${linkHref}"` : ''}>${menuData.length - index}</${linkElement}>
             </div>
         `
-    )
-));
+    );
+});
 
 function toggleMenu() {
     gateElement.classList.toggle('isClose');
