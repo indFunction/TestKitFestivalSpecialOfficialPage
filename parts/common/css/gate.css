@@ -271,4 +271,12 @@
     #gate.isClose > .body > .rightDoor {
         left: 0;
     }
+
+    #gate > .body > .rightDoor > .buttonList {
+        padding-bottom: calc(122px + 8px);
+    }
+
+    #gate > .button > button {
+        bottom: 80px;
+    }
 }
