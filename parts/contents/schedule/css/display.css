@@ -4,6 +4,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 960px;
+    max-width: 100%;
     height: auto;
     margin: 0 auto;
     padding: 0 4px;

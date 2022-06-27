@@ -176,3 +176,15 @@ function toggleDescription(section) {
         itemElements[i].style.height = `${originalHeight * (isHide ? 0.5 : 1)}px`;
     }
 }
+
+function toggleColumn(section, column) {
+    const blocksElements = contentElements[section].getElementsByClassName('blocks');
+
+    for (let i = 0; i < blocksElements.length; i++) {
+        if (i == column) {
+            blocksElements[i].classList.remove('isHide');
+        } else {
+            blocksElements[i].classList.add('isHide');
+        }
+    }
+}
