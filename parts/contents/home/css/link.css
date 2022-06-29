@@ -1,0 +1,30 @@
+#links {
+    position: absolute;
+    bottom: 25vh;
+    right: 0;
+    margin-bottom: 64px;
+    transform: scale(1, -1);
+}
+
+#links > a {
+    padding: 8px;
+    font-weight: 500;
+    color: #ccc;
+    background-color: #f888;
+    transition-property: padding, color, background-color;
+    transition: 0.25s;
+}
+#links > a:hover {
+    padding-right: 16px;
+    color: #fff;
+    background-color: #f88c;
+    transition-property: padding, color, background-color;
+    transition: 0.25s;
+}
+#links > a:active {
+    padding-right: 8px;
+    color: #f88;
+    background-color: #fffc;
+    transition-property: padding, color, background-color;
+    transition: 0.05s;
+}
