@@ -74,6 +74,9 @@ gateElement.innerHTML = `
         </div>
     </div>
     <div class="button">
+        <div id="help" class="isHide">
+            <div class="acrylicPlate">MENU<span class="arrow"></span></div>
+        </div>
         <button class="retroButton" onClick="toggleMenu()">
             <span></span>
             <span></span>
@@ -81,6 +84,8 @@ gateElement.innerHTML = `
         </button>
     </div>
 `;
+
+const helpElement = document.getElementById('help');
 
 const gateButtonListElement = gateElement.getElementsByClassName('buttonList')[0];
 
@@ -103,6 +108,15 @@ menuData.map((item, index) => {
 
 function toggleMenu() {
     gateElement.classList.toggle('isClose');
+    helpElement.classList.add('isHide');
+}
+
+function toggleHelp() {
+    if (document.documentElement.scrollTop <= window.innerHeight || gateElement.classList.contains('isClose')) {
+        helpElement.classList.add('isHide');
+    } else {
+        helpElement.classList.remove('isHide');
+    }
 }
 
 function setContent(id) {
@@ -120,3 +134,5 @@ function setContent(id) {
 
     gateElement.classList.remove('isClose');
 }
+
+if (isRoot) setInterval(toggleHelp, 100);
