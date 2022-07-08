@@ -38,8 +38,7 @@
     height: 100%;
     background: radial-gradient(transparent, #0008);
 }
-#gate button.retroButton:hover,
-#gate a.retroButton:hover {
+#gate .retroButton.function:hover {
     background-color: #f84;
     transition-property: background-color;
     transition: 0.25s;
@@ -196,6 +195,23 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+    border-radius: 4px;
+    background-color: transparent;
+    box-shadow: 0 0 8px transparent;
+    transition-property: background-color, box-shadow;
+    transition: 0.25s;
+}
+#gate > .body > .rightDoor > .buttonList > .item.function:hover {
+    background-color: #fff4;
+    box-shadow: 0 0 8px #fff8;
+    transition-property: background-color, box-shadow;
+    transition: 0.25s;
+}
+#gate > .body > .rightDoor > .buttonList > .item.here {
+    background-color: #fff8;
+    box-shadow: 0 0 8px #ffff;
+    transition-property: background-color, box-shadow;
+    transition: 0.25s;
 }
 
 #gate > .body > .rightDoor > .buttonList > .item > .label {

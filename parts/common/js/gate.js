@@ -95,13 +95,15 @@ menuData.map((item, index) => {
         '.' + item.link :
         item.link == '/index.html' ? '..' + item.link : item.link.replace('/pages', '.');
 
+    const isHere = isRoot ? item.link == '/index.html' : location.pathname == baseUrl + item.link;
+
     gateButtonListElement.insertAdjacentHTML(
         'beforeend',
         `
-            <div class="item">
-                <${linkElement} class="label acrylicPlate${item.link ? '': ' blank'}"${item.link ? ` href="${linkHref}"` : ''}>${item.name}</${linkElement}>
-                <${linkElement} class="retroButton"${item.link ? ` href="${linkHref}"` : ''}>${menuData.length - index}</${linkElement}>
-            </div>
+            <${linkElement} class="item${isHere ? ' here': ''}${item.link ? ' function': ''}"${item.link ? ` href="${linkHref}"` : ''}>
+                <div class="label acrylicPlate${item.link ? '': ' blank'}">${item.name}</div>
+                <div class="retroButton${item.link ? ' function': ''}">${menuData.length - index}</div>
+            </${linkElement}>
         `
     );
 });
