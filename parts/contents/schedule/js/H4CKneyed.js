@@ -7,11 +7,11 @@ const blockLengthPerHour = 360;
 const timeLength = [
     [
         {
-            start: [17, 0],
+            start: [16, 0],
             end: [19, 0]
         },
         {
-            start: [17, 0],
+            start: [16, 0],
             end: [19, 0]
         },
         {

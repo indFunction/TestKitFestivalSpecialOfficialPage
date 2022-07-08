@@ -77,7 +77,7 @@ gateElement.innerHTML = `
         <div id="help" class="isHide">
             <div class="acrylicPlate">MENU<span class="arrow"></span></div>
         </div>
-        <button class="retroButton" onClick="toggleMenu()">
+        <button class="retroButton function" onClick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>

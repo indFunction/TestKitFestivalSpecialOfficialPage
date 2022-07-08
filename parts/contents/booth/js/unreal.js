@@ -69,4 +69,13 @@ function setCards(cardData, section) {
             );
         }
     });
+
+    if (displayElements.length % 2 == 1) {
+        displayElements[section].getElementsByClassName('cards')[0].insertAdjacentHTML(
+            'beforeend',
+            `
+                <div class="card dummy"></div>
+            `
+        );
+    }
 }
