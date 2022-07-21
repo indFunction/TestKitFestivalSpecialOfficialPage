@@ -1,0 +1,12 @@
+const baseUrl = '';
+---> const baseUrl = '/kitfes';
+---> const baseUrl = '/kitfes/store';
+
+https://testkitfesnormal.indfunction.work/pages/
+---> ../store/pages/
+
+https://testkitfesnormal.indfunction.work/
+---> ./store/
+
+https://testkitfesspecial.indfunction.work/
+---> ../
